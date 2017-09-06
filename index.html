@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Mastermind</title>
+    <style>
+        @font-face {
+
+            font-family: "Cartwheel";
+            src: "Cartwheel.otf";
+        }
+
+
+        body {
+
+            font-family: "Cartwheel";
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 100px;
+        }
+
+        table {
+            border-style: outset;
+            border-collapse: collapse;
+            position: fixed;
+            background: white;
+        }
+
+        td {
+            width: 40px;
+            height: 40px;
+            border: thick solid black;
+            background: white;
+            border-style: outset;
+        }
+
+        .feedback {
+            width: 10px;
+            height: 10px;
+            border: thin solid black;
+            background: white;
+            border-style: outset
+        }
+
+        #gameBoard {
+
+            margin-left: 40vw;
+            margin-top: 5vh;
+        }
+
+        .X {
+            background: url("x.jpg") no-repeat center;
+        }
+
+        .O {
+            background: url("o.png") no-repeat center center;
+        }
+
+        #newGame {
+            /* margin-left: 18.9%;
+            margin-top: 23%; */
+            background: red;
+            font-family: "Cartwheel";
+        }
+
+        #results {
+            margin-left: 75px;
+            margin-right: 75px;
+            font-family: "Cartwheel";
+        }
+
+        #startOver {
+
+            background: darkblue;
+            font-family: "Cartwheel";
+        }
+
+        #declareWinner {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 40px;
+            background: white;
+        }
+
+        body {
+            background: blue;
+        }
+
+        img {
+
+            vertical-align: middle;
+            margin-bottom: 5px;
+        }
+        /* 
+        button {
+
+            height: 35px;
+            font-size: 25px;
+            background: black;
+            color: white;
+            font-family: "Cartwheel";
+        } */
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        #toe {
+            color: white;
+        }
+
+        .blue {
+            background-color: blue
+        }
+
+        .white {
+
+            color: white;
+        }
+
+        .grey{
+            background-color:grey;
+        }
+        .yellow {
+
+            background-color: yellow;
+        }
+
+        .green {
+
+            background-color: green;
+        }
+
+        .red {
+
+            background-color: red;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        #radio {
+            margin-left: 25vw;
+        }
+
+        .guess {
+            margin-left: 35vw;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="white">Mastermind</h1>
+
+    <div id="declareWinner">Can you break the code?</div>
+    <div id="gameBoard">
+        <table>
+            <tr>
+                <td id="1"></td>
+                <td id="2"></td>
+                <td id="3"></td>
+                <td id="4"></td>
+
+            </tr>
+
+            <tr>
+
+                <td id="5"></td>
+                <td id="6"></td>
+                <td id="7"></td>
+                <td id="8"></td>
+                <td id ="H0" class="feedback"></td>
+                <td id ="H1"class="feedback"></td>
+                <td id ="H2"class="feedback"></td>
+                <td id ="H3"class="feedback"></td>
+
+
+
+            </tr>
+            <tr>
+
+                <td id="9"></td>
+                <td id="10"></td>
+                <td id="11"></td>
+                <td id="12"></td>
+                <td id ="G0" class="feedback"></td>
+                <td id ="G1"class="feedback"></td>
+                <td id ="G2"class="feedback"></td>
+                <td id ="G3"class="feedback"></td>
+
+
+
+            </tr>
+            <tr>
+                <td id="13"></td>
+                <td id="14"></td>
+                <td id="15"></td>
+                <td id="16"></td>
+                <td id ="F0" class="feedback"></td>
+                <td id ="F1" class="feedback"></td>
+                <td id ="F2" class="feedback"></td>
+                <td id ="F3" class="feedback"></td>
+
+
+            </tr>
+            <tr>
+
+                <td id="17"></td>
+                <td id="18"></td>
+                <td id="19"></td>
+                <td id="20"></td>
+                <td id ="E0" class="feedback"></td>
+                <td id ="E1" class="feedback"></td>
+                <td id ="E2" class="feedback"></td>
+                <td id ="E3" class="feedback"></td>
+
+
+            </tr>
+            <tr>
+
+                <td id="21"></td>
+                <td id="22"></td>
+                <td id="23"></td>
+                <td id="24"></td>
+                <td id ="D0" class="feedback"></td>
+                <td id ="D1" class="feedback"></td>
+                <td id ="D2" class="feedback"></td>
+                <td id ="D3" class="feedback"></td>
+
+
+
+            </tr>
+            <tr>
+
+                <td id="25"></td>
+                <td id="26"></td>
+                <td id="27"></td>
+                <td id="28"></td>
+                <td id ="C0" class="feedback"></td>
+                <td id ="C1" class="feedback"></td>
+                <td id ="C2" class="feedback"></td>
+                <td id ="C3" class="feedback"></td>
+
+
+
+            </tr>
+            <tr>
+
+                <td id="29"></td>
+                <td id="30"></td>
+                <td id="31"></td>
+                <td id="32"></td>
+                <td id ="B0" class="feedback"></td>
+                <td id ="B1" class="feedback"></td>
+                <td id ="B2" class="feedback"></td>
+                <td id ="B3" class="feedback"></td>
+
+
+
+            </tr>
+            <tr>
+
+
+                <td id="33">1</td>
+                <td id="34">2</td>
+                <td id="35">3</td>
+                <td id="36">4</td>
+                <td id ="A0" class="feedback">1</td>
+                <td id ="A1" class="feedback">2</td>
+                <td id ="A2" class="feedback">3</td>
+                <td id ="A3" class="feedback">4</td>
+
+            </tr>
+
+
+
+        </table>
+
+        <input id = "field" class= "guess" type="text" name="color" placeholder="Select Color: B,O,Y,R,G,P">
+        <button onclick="makeGuess1()">Guess 1</button>
+
+       
+    </div>
+    <div>
+       
+    </div>
+   
+    <script src="mastermind.js"></script>
+</body>
+
+</html>
