@@ -33,14 +33,36 @@ function chooseCellColor(location) {
 
 }
 
+var counter = {
+	green: 0,
+	red: 0,
+	yellow: 0,
+	blue: 0,
+	purple: 0,
+	orange: 0
+}
+
+window.onload = setSecretCode;
+
+var secretOne = document.getElementById("1").getAttribute("class");
+var secretTwo = document.getElementById("2").getAttribute("class");
+var secretThree = document.getElementById("3").getAttribute("class");
+var secretFour = document.getElementById("4").getAttribute("class");
+var secret = [secretOne, secretTwo, secretThree, secretFour];
+
+function setSecretCode() {
+
+	for (i = 0; i < secret.length; i++) {
+		counter[secret[i]]++;
+
+		console.log(counter);
+	}
+}
 function makeGuess1() {
-	var secretOne = document.getElementById("1").getAttribute("class");
-	var secretTwo = document.getElementById("2").getAttribute("class");
-	var secretThree = document.getElementById("3").getAttribute("class");
-	var secretFour = document.getElementById("4").getAttribute("class");
-	var secret = [secretOne, secretTwo, secretThree, secretFour];
 
 
+
+	console.log(counter);
 	var oneGuess = document.getElementById("33").getAttribute("class");
 	var twoGuess = document.getElementById("34").getAttribute("class");
 	var threeGuess = document.getElementById("35").getAttribute("class");
@@ -51,24 +73,31 @@ function makeGuess1() {
 	var answer = [];
 
 
-		for (var i = 0; i < 4; i++) {
-			if (secret[i] == guessOne[i]) {
-				answer[i] = "black";
-			}
-			if ((secret.indexOf(guessOne[i]) != -1) && answer[i] != "black") {
-				
-				answer[i]="grey";
-			} else if (secret.indexOf(guessOne[i]) == -1){ 
-				answer[i]="white";
-
-			}
+	for (var i = 0; i < 4; i++) {
+		if (secret[i] == guessOne[i] && answer[i]!="black") {
+			answer[i] = "black";
+			counter[guessOne[i]]--;
+		}
 	}
+	for (var i = 0; i < 4; i++) {
+		if ((secret.indexOf(guessOne[i]) != -1) && counter[guessOne[i]] > 0) {
+			answer[i] = "grey";
 
-    console.log(answer)
-	for (var i = 0; i < 5; i++) {
 
-		document.getElementById('A' + i).setAttribute("class", answer[i]);
-	}
+
+
+		} else if (secret.indexOf(guessOne[i]) == -1) {
+			answer[i] = "white";
+
+		}
+	
+}
+
+
+for (var i = 0; i < 4; i++) {
+
+	document.getElementById('A' + i).setAttribute("class", answer[i]);
+}
 
 
 }
