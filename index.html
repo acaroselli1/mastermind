@@ -52,7 +52,7 @@
 
         #gameBoard {
 
-            margin-left: 40vw;
+            margin-left: 37.3vw;
             margin-top: 5vh;
         }
 
@@ -124,7 +124,8 @@
         }
 
         .blue {
-            background-color: blue
+            background-color: blue;
+            color:navy;
         }
 
         .white {
@@ -148,6 +149,7 @@
         .red {
 
             background-color: red;
+            color:maroon;
         }
 
         .purple {
@@ -165,11 +167,14 @@
         .guess {
             margin-left: 35vw;
         }
+        .guessnext{
+            margin-left:46.12vw;
+        }
     </style>
 </head>
 
 <body>
-    <h1 class="white">Mastermind</h1>
+    <h1 class="blue">Mastermind</h1>
 
     <div id="declareWinner">Can you break the code?</div>
     <div id="gameBoard">
@@ -180,9 +185,7 @@
                 <td id="3"></td>
                 <td id="4"></td>
             </tr>
-
             <tr>
-                   
                 <td id="5"></td>
                 <td id="6"></td>
                 <td id="7"></td>
@@ -296,8 +299,8 @@
 
         <input id = "field" class= "guess" type="text" name="color" placeholder="Select Color: B,O,Y,R,G,P">
         <button onclick="makeGuess1()">Guess 1</button>
-
-       
+        <button class ="guessnext" onclick="makeGuess2()">Guess 2</button>
+        <button class ="guessnext" onclick="makeGuess3()">Guess 3</button>
     </div>
     <div>
        
