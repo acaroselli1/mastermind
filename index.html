@@ -30,9 +30,9 @@
         }
 
         td {
-            width: 40px;
-            height: 40px;
-            border: thick solid black;
+            width: 35px;
+            height: 35px;
+            border: 10px solid brown;
             background: white;
             border-style: outset;
         }
@@ -45,14 +45,14 @@
         .feedback {
             width: 10px;
             height: 10px;
-            border: thin solid black;
+            border: thick solid brown;
             background: white;
             border-style: outset;
         }
 
         #gameBoard {
 
-            margin-left: 37.3vw;
+            margin-left: 37.15vw;
             margin-top: 5vh;
         }
 
@@ -288,9 +288,9 @@
                 <td id="34"></td>
                 <td id="35"></td>
                 <td id="36"></td>
-                <td id ="A1" class="feedback"></td>
-                <td id ="A0" class="feedback"></td>
                 <td id ="A3" class="feedback"></td>
+                <td id ="A0" class="feedback"></td>
+                <td id ="A1" class="feedback"></td>
                 <td id ="A2" class="feedback"></td>
 
             </tr>
@@ -300,7 +300,7 @@
         </table>
 
         <input id = "field" class= "guess" type="text" name="color" placeholder="Select Color: B,O,Y,R,G,P">
-        <button onclick="makeGuess1()">Guess 1</button>
+        <button id ="makeGuess1"onclick="makeGuess1()">Guess 1</button>
         <button class ="guessnext" onclick="makeGuess2()">Guess 2</button>
         <button class ="guessnext" onclick="makeGuess3()">Guess 3</button>
     </div>

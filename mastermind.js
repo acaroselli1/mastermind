@@ -1,9 +1,21 @@
 
+	var colors =["blue", "red", "yellow", "green", "orange", "purple"];
+	var randomIndex = Math.floor(Math.random() * 6);
+	console.log (randomIndex);
 
-var one = document.getElementById("1").setAttribute("class", "blue");
-var two = document.getElementById("2").setAttribute("class", "red");
-var three = document.getElementById("3").setAttribute("class", "yellow");
-var four = document.getElementById("4").setAttribute("class", "green");
+
+function establishSecretCode(){
+randomIndex = Math.floor(Math.random() * 6);	
+var one = document.getElementById("1").setAttribute("class", colors[randomIndex]);
+randomIndex = Math.floor(Math.random() * 6);
+var two = document.getElementById("2").setAttribute("class", colors[randomIndex]);
+randomIndex = Math.floor(Math.random() * 6);
+var three = document.getElementById("3").setAttribute("class", colors[randomIndex]);
+randomIndex = Math.floor(Math.random() * 6);
+var four = document.getElementById("4").setAttribute("class", colors[randomIndex]);
+}
+
+establishSecretCode()
 
 var cells = document.getElementsByTagName("td");
 
@@ -61,10 +73,13 @@ function setSecretCode() {
 }
 
 function makeGuess1() {
-
+	
+	document.getElementById("makeGuess1").setAttribute('disabled', 'disabled');
+	document.getElementById("makeGuess1").style.color = "white";
 
 
 	console.log(counter);
+
 	var oneGuess = document.getElementById("33").getAttribute("class");
 	var twoGuess = document.getElementById("34").getAttribute("class");
 	var threeGuess = document.getElementById("35").getAttribute("class");
@@ -115,7 +130,7 @@ function makeGuess1() {
 			return document.getElementById("declareWinner").innerHTML = "TIME IS RUNNING OUT!! JUST " + (chances - 1)  + " MORE CHANCES TO BREAK THE CODE!!";
 			}
 
-		} return document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! YOU BROKE THE CODE!!!";
+		} return document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! -- YOU BROKE THE CODE!! -- CONGRATULATIONS!!!";
 		
 		wins++;
 	}
@@ -125,6 +140,8 @@ function makeGuess1() {
 
 	function makeGuess2() {
 
+		document.getElementById("disease-button").setAttribute('disabled', 'disabled');
+		document.getElementById("disease-button").style.color = "white";
 
 
 		console.log(counter);
