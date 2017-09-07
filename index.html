@@ -36,8 +36,8 @@
             background: white;
             border-style: outset;
         }
-        
-        #feedback{
+
+        #feedback {
             width: 10px;
             height: 10px;
         }
@@ -125,19 +125,22 @@
 
         .blue {
             background-color: blue;
-            color:navy;
+            color: navy;
         }
-        .redhighlight{
-            color:red;
+
+        .redhighlight {
+            color: red;
         }
+
         .white {
 
             color: white;
         }
 
-        .grey{
-            background-color:grey;
+        .grey {
+            background-color: grey;
         }
+
         .yellow {
 
             background-color: yellow;
@@ -151,7 +154,6 @@
         .red {
 
             background-color: red;
-            color:maroon;
         }
 
         .purple {
@@ -167,11 +169,29 @@
         }
 
         .guess {
-            margin-left: 35vw;
+            margin-left: 25vw;
         }
-        .guessnext{
-            margin-left:46.12vw;
+
+        .guessnext {
+            margin-left: 46.12vw;
+            margin-top: 2.5vh;
         }
+
+        #guesses {
+
+            margin-left: -20vw;
+        }
+
+        #colors {
+            margin-left: 25vw;
+        }
+/* 
+        .hide {
+            display: none;
+        } */
+        /* .secret-code{
+            display:none;
+        } */
     </style>
 </head>
 
@@ -181,102 +201,102 @@
     <div id="declareWinner">1296 POSSIBILITIES - CAN YOU BREAK THE CODE?</div>
     <div id="gameBoard">
         <table>
-            <tr>
-                <td id="1"></td>
-                <td id="2"></td>
-                <td id="3"></td>
-                <td id="4"></td>
+            <tr id="secretCodeDisplay" class="hide">
+                <td class="secret-code" id="1"></td>
+                <td class="secret-code" id="2"></td>
+                <td class="secret-code" id="3"></td>
+                <td class="secret-code" id="4"></td>
             </tr>
             <tr>
-                <td id="5"></td>
-                <td id="6"></td>
-                <td id="7"></td>
                 <td id="8"></td>
-                <td id ="H0" class="feedback"></td>
-                <td id ="H1"class="feedback"></td>
-                <td id ="H2"class="feedback"></td>
-                <td id ="H3"class="feedback"></td>
+                <td id="7"></td>
+                <td id="6"></td>
+                <td id="5"></td>
+                <td id="H0" class="feedback"></td>
+                <td id="H1" class="feedback"></td>
+                <td id="H2" class="feedback"></td>
+                <td id="H3" class="feedback"></td>
 
 
 
             </tr>
             <tr>
 
-                <td id="9"></td>
-                <td id="10"></td>
-                <td id="11"></td>
                 <td id="12"></td>
-                <td id ="G0" class="feedback"></td>
-                <td id ="G1"class="feedback"></td>
-                <td id ="G2"class="feedback"></td>
-                <td id ="G3"class="feedback"></td>
+                <td id="11"></td>
+                <td id="10"></td>
+                <td id="9"></td>
+                <td id="G0" class="feedback"></td>
+                <td id="G1" class="feedback"></td>
+                <td id="G2" class="feedback"></td>
+                <td id="G3" class="feedback"></td>
 
 
 
             </tr>
             <tr>
-                <td id="13"></td>
-                <td id="14"></td>
-                <td id="15"></td>
                 <td id="16"></td>
-                <td id ="F0" class="feedback"></td>
-                <td id ="F1" class="feedback"></td>
-                <td id ="F2" class="feedback"></td>
-                <td id ="F3" class="feedback"></td>
+                <td id="15"></td>
+                <td id="14"></td>
+                <td id="13"></td>
+                <td id="F0" class="feedback"></td>
+                <td id="F1" class="feedback"></td>
+                <td id="F2" class="feedback"></td>
+                <td id="F3" class="feedback"></td>
 
 
             </tr>
             <tr>
 
-                <td id="17"></td>
-                <td id="18"></td>
-                <td id="19"></td>
-                <td id="20"></td>
-                <td id ="E0" class="feedback"></td>
-                <td id ="E1" class="feedback"></td>
-                <td id ="E2" class="feedback"></td>
-                <td id ="E3" class="feedback"></td>
+                <td id="20">4</td>
+                <td id="19">3</td>
+                <td id="18">2</td>
+                <td id="17">1</td>
+                <td id="E0" class="feedback">1</td>
+                <td id="E1" class="feedback">2</td>
+                <td id="E2" class="feedback">3</td>
+                <td id="E3" class="feedback">4</td>
 
 
             </tr>
             <tr>
 
-                <td id="21"></td>
-                <td id="22"></td>
-                <td id="23"></td>
                 <td id="24"></td>
-                <td id ="D0" class="feedback"></td>
-                <td id ="D1" class="feedback"></td>
-                <td id ="D2" class="feedback"></td>
-                <td id ="D3" class="feedback"></td>
+                <td id="23"></td>
+                <td id="22"></td>
+                <td id="21"></td>
+                <td id="D0" class="feedback"></td>
+                <td id="D1" class="feedback"></td>
+                <td id="D2" class="feedback"></td>
+                <td id="D3" class="feedback"></td>
 
 
 
             </tr>
             <tr>
 
-                <td id="25"></td>
-                <td id="26"></td>
-                <td id="27"></td>
                 <td id="28"></td>
-                <td id ="C0" class="feedback"></td>
-                <td id ="C1" class="feedback"></td>
-                <td id ="C2" class="feedback"></td>
-                <td id ="C3" class="feedback"></td>
+                <td id="27"></td>
+                <td id="26"></td>
+                <td id="25"></td>
+                <td id="C0" class="feedback"></td>
+                <td id="C1" class="feedback"></td>
+                <td id="C2" class="feedback"></td>
+                <td id="C3" class="feedback"></td>
 
 
 
             </tr>
             <tr>
 
-                <td id="29"></td>
-                <td id="30"></td>
-                <td id="31"></td>
                 <td id="32"></td>
-                <td id ="B0" class="feedback"></td>
-                <td id ="B1" class="feedback"></td>
-                <td id ="B2" class="feedback"></td>
-                <td id ="B3" class="feedback"></td>
+                <td id="31"></td>
+                <td id="30"></td>
+                <td id="29"></td>
+                <td id="B0" class="feedback"></td>
+                <td id="B1" class="feedback"></td>
+                <td id="B2" class="feedback"></td>
+                <td id="B3" class="feedback"></td>
 
 
 
@@ -284,14 +304,14 @@
             <tr>
 
 
-                <td id="33"></td>
-                <td id="34"></td>
-                <td id="35"></td>
-                <td id="36"></td>
-                <td id ="A3" class="feedback"></td>
-                <td id ="A0" class="feedback"></td>
-                <td id ="A1" class="feedback"></td>
-                <td id ="A2" class="feedback"></td>
+                <td id="36">33f</td>
+                <td id="35">34</td>
+                <td id="34">35</td>
+                <td id="33">36</td>
+                <td id="A0" class="feedback"></td>
+                <td id="A1" class="feedback"></td>
+                <td id="A2" class="feedback"></td>
+                <td id="A3" class="feedback"></td>
 
             </tr>
 
@@ -299,15 +319,29 @@
 
         </table>
 
-        <input id = "field" class= "guess" type="text" name="color" placeholder="Select Color: B,O,Y,R,G,P">
-        <button id ="makeGuess1"onclick="makeGuess1()">Guess 1</button>
-        <button class ="guessnext" onclick="makeGuess2()">Guess 2</button>
-        <button class ="guessnext" onclick="makeGuess3()">Guess 3</button>
+        <input id="field" class="guess" type="text" name="color" placeholder="CHOOSE A COLOR">
+        <p id="colors"><button id="red" onclick="chooseRed()" class="red">R</button><button id="blue" class="blue" onclick="chooseBlue()">B</button>
+            <button id="green" class="green" onclick="chooseGreen()">G</button><button id="orange" class="orange" onclick="chooseOrange()">O</button>
+            <button
+                id="yellow" class="yellow" onclick="chooseYellow()">Y</button><button id="purple" class="purple" onclick="choosePurple()">P</button></p>
+
+        <div id="guesses">
+            <button id="H" class="guessnext" onclick="makeGuess('H' )">Guess 8</button>
+            <button id="G" class="guessnext" onclick="makeGuess('G' )">Guess 7</button>
+            <button id="F" class="guessnext" onclick="makeGuess('F' )">Guess 6</button>
+            <button id="E" class="guessnext" onclick="makeGuess('E' )">Guess 5</button>
+            <button id="D" class="guessnext" onclick="makeGuess('D')">Guess 4</button>
+            <button id="C" class="guessnext" onclick="makeGuess('C' )">Guess 3</button>
+            <button id="B" class="guessnext" onclick="makeGuess('B' )">Guess 2</button>
+            <button id="A" class="guessnext" onclick="makeGuess('A')">Guess 1</button>
+        </div>
     </div>
     <div>
-       
+
     </div>
-   
+    
+    <audio loop  id="song" src ="mission-impossible.mp3"></audio>
+    <audio loop  id="siren" src ="siren.mp3"></audio>
     <script src="mastermind.js"></script>
 </body>
 
