@@ -49,6 +49,7 @@ var secretTwo = document.getElementById("2").getAttribute("class");
 var secretThree = document.getElementById("3").getAttribute("class");
 var secretFour = document.getElementById("4").getAttribute("class");
 var secret = [secretOne, secretTwo, secretThree, secretFour];
+var chances = 8;
 
 function setSecretCode() {
 
@@ -75,7 +76,7 @@ function makeGuess1() {
 
 
 	for (var i = 0; i < 4; i++) {
-		if (secret[i] == guessOne[i] && answer[i]!="black") {
+		if (secret[i] == guessOne[i] && answer[i] != "black") {
 			answer[i] = "black";
 			counter[guessOne[i]]--;
 		}
@@ -91,35 +92,54 @@ function makeGuess1() {
 			answer[i] = "white";
 
 		}
+
+
+
+
+		for (var i = 0; i < 4; i++) {
+
+			document.getElementById('A' + i).setAttribute("class", answer[i]);
+		}
+	}
+
+
+
+ 
+	var chances =8;
+	var wins = 0;
 	
+	function declareMissionStatus() {
+
+		for (var i = 0; i < 4; i++) {
+			if (answer[i] != "black") {
+			return document.getElementById("declareWinner").innerHTML = "TIME IS RUNNING OUT!! JUST " + (chances - 1)  + " MORE CHANCES TO BREAK THE CODE!!";
+			}
+
+		} return document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! YOU BROKE THE CODE!!!";
+		
+		wins++;
+	}
+
+ declareMissionStatus()
+}	
+
+	function makeGuess2() {
 
 
 
-for (var i = 0; i < 4; i++) {
-
-	document.getElementById('A' + i).setAttribute("class", answer[i]);
-}
-}
-
-}
-
-function makeGuess2() {
-	
-	
-	
 		console.log(counter);
 		var oneGuess = document.getElementById("29").getAttribute("class");
 		var twoGuess = document.getElementById("30").getAttribute("class");
 		var threeGuess = document.getElementById("31").getAttribute("class");
 		var fourGuess = document.getElementById("32").getAttribute("class");
 		var guessOne = [oneGuess, twoGuess, threeGuess, fourGuess]
-	
-	
+
+
 		var answer = [];
-	
-	
+
+
 		for (var i = 0; i < 4; i++) {
-			if (secret[i] == guessOne[i] && answer[i]!="black") {
+			if (secret[i] == guessOne[i] && answer[i] != "black") {
 				answer[i] = "black";
 				counter[guessOne[i]]--;
 			}
@@ -127,65 +147,65 @@ function makeGuess2() {
 		for (var i = 0; i < 4; i++) {
 			if ((secret.indexOf(guessOne[i]) != -1) && counter[guessOne[i]] > 0) {
 				answer[i] = "grey";
-	
-	
-	
-	
+
+
+
+
 			} else if (secret.indexOf(guessOne[i]) == -1) {
 				answer[i] = "white";
-	
+
 			}
-		
-	
-	
-	
-	for (var i = 0; i < 4; i++) {
-	
-		document.getElementById('B' + i).setAttribute("class", answer[i]);
-	}
-	}
-	
-	}
-    function makeGuess3() {
-		
-		
-		
-			console.log(counter);
-			var oneGuess = document.getElementById("25").getAttribute("class");
-			var twoGuess = document.getElementById("26").getAttribute("class");
-			var threeGuess = document.getElementById("27").getAttribute("class");
-			var fourGuess = document.getElementById("28").getAttribute("class");
-			var guessOne = [oneGuess, twoGuess, threeGuess, fourGuess]
-		
-		
-			var answer = [];
-		
-		
+
+
+
+
 			for (var i = 0; i < 4; i++) {
-				if (secret[i] == guessOne[i] && answer[i]!="black") {
-					answer[i] = "black";
-					counter[guessOne[i]]--;
-				}
+
+				document.getElementById('B' + i).setAttribute("class", answer[i]);
 			}
-			for (var i = 0; i < 4; i++) {
-				if ((secret.indexOf(guessOne[i]) != -1) && counter[guessOne[i]] > 0) {
-					answer[i] = "grey";
-		
-		
-		
-		
-				} else if (secret.indexOf(guessOne[i]) == -1) {
-					answer[i] = "white";
-		
-				}
-			
-		
-		
-		
+		}
+
+	}
+	function makeGuess3() {
+
+
+
+		console.log(counter);
+		var oneGuess = document.getElementById("25").getAttribute("class");
+		var twoGuess = document.getElementById("26").getAttribute("class");
+		var threeGuess = document.getElementById("27").getAttribute("class");
+		var fourGuess = document.getElementById("28").getAttribute("class");
+		var guessOne = [oneGuess, twoGuess, threeGuess, fourGuess]
+
+
+		var answer = [];
+
+
 		for (var i = 0; i < 4; i++) {
-		
-			document.getElementById('C' + i).setAttribute("class", answer[i]);
+			if (secret[i] == guessOne[i] && answer[i] != "black") {
+				answer[i] = "black";
+				counter[guessOne[i]]--;
+			}
 		}
+		for (var i = 0; i < 4; i++) {
+			if ((secret.indexOf(guessOne[i]) != -1) && counter[guessOne[i]] > 0) {
+				answer[i] = "grey";
+
+
+
+
+			} else if (secret.indexOf(guessOne[i]) == -1) {
+				answer[i] = "white";
+
+			}
+
+
+
+
+			for (var i = 0; i < 4; i++) {
+
+				document.getElementById('C' + i).setAttribute("class", answer[i]);
+			}
 		}
-		
-		}
+
+	}
