@@ -76,7 +76,7 @@ var wins = 0;
 
 
 
-window.onload = setSecretCode;
+
 
 var secretOne = document.getElementById("1").getAttribute("class");
 var secretTwo = document.getElementById("2").getAttribute("class");
@@ -85,14 +85,21 @@ var secretFour = document.getElementById("4").getAttribute("class");
 var secret = [secretOne, secretTwo, secretThree, secretFour];
 var chances = 8;
 
-function setSecretCode() {
+
+
+var number = 36;
+
+
+
+function makeGuess(level) {
+
+	if (level=='H'){
+		document.getElementById("secretCodeDisplay").removeAttribute("class");
+	}
 
 	document.getElementById("song").play();
+	
 
-
-}
-var number = 36;
-function makeGuess(level) {
 	var counter = {
 		green: 0,
 		red: 0,
@@ -123,9 +130,6 @@ function makeGuess(level) {
 		count++
 		
 	}
-	// var twoGuess = document.getElementById("34").getAttribute("class");
-	// var threeGuess = document.getElementById("35").getAttribute("class");
-	// var fourGuess = document.getElementById(number).getAttribute("class");
 
 	console.log(guessOne);
 
@@ -163,6 +167,10 @@ function makeGuess(level) {
 
 
 	var chances = 8;
+    
+	// if (chances == 0){
+	// 	document.getElementById("secretCodeDisplay").removeAttribute("class");
+	// }
 
 	function declareMissionStatus() {
 
@@ -171,453 +179,16 @@ function makeGuess(level) {
 				return document.getElementById("declareWinner").innerHTML = "TIME IS RUNNING OUT!! JUST " + (chances - 1) + " MORE CHANCES TO BREAK THE CODE!!";
 			}
 
-		} return document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! -- YOU BROKE THE CODE!! -- CONGRATULATIONS!!!";
-		document.getElementById("secretCodeDisplay").removeAttribute("class");
-		document.getElementById("song").stop();
-		document.getElementById("siren").play();
-		wins++;
-	}
-
-	declareMissionStatus()
-}
-
-function makeGuess2() {
-
-	document.getElementById("makeGuess2").setAttribute('disabled', 'disabled');
-	document.getElementById("makeGuess2").style.color = "white";
-
-
-	console.log(counter);
-	console.log(guessOne);
-
-	var oneGuess = document.getElementById("29").getAttribute("class");
-	var twoGuess = document.getElementById("30").getAttribute("class");
-	var threeGuess = document.getElementById("31").getAttribute("class");
-	var fourGuess = document.getElementById("32").getAttribute("class");
-	var guessOne = [oneGuess, twoGuess, threeGuess, fourGuess]
-
-
-	// var answer = [];
-
-
-	for (var i = 0; i < 4; i++) {
-		if (secret[i] == guessOne[i] && answer[i] != "black") {
-			answer[i] = "black";
-			counter[guessOne[i]]--;
-		}
-	}
-	for (var i = 0; i < 4; i++) {
-		if ((secret.indexOf(guessOne[i]) != -1) && counter[guessOne[i]] > 0) {
-			answer[i] = "grey";
-
-
-
-
-		} else if (secret.indexOf(guessOne[i]) == -1) {
-			answer[i] = "white";
-
-		}
-
-
-
-
-		for (var i = 0; i < 4; i++) {
-
-			document.getElementById('B' + i).setAttribute("class", answer[i]);
-		}
-	}
-
-	var chances = 7;
-
-	function declareMissionStatus() {
-
-		for (var i = 0; i < 4; i++) {
-			if (answer[i] != "black") {
-				return document.getElementById("declareWinner").innerHTML = "TIME IS RUNNING OUT!! JUST " + (chances - 1) + " MORE CHANCES TO BREAK THE CODE!!";
-			}
-
-		} return document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! -- YOU BROKE THE CODE!! -- CONGRATULATIONS!!!";
-		document.getElementById("secretCodeDisplay").removeAttribute("class");
-		document.getElementById("song").stop();
-		document.getElementById("siren").play();
-		wins++;
-	}
-
-	declareMissionStatus()
-
-
-
-}
-function makeGuess3() {
-
-	document.getElementById("makeGuess3").setAttribute('disabled', 'disabled');
-	document.getElementById("makeGuess3").style.color = "white";
-
-
-	console.log(counter);
-	var oneGuess = document.getElementById("25").getAttribute("class");
-	var twoGuess = document.getElementById("26").getAttribute("class");
-	var threeGuess = document.getElementById("27").getAttribute("class");
-	var fourGuess = document.getElementById("28").getAttribute("class");
-	var guessOne = [oneGuess, twoGuess, threeGuess, fourGuess]
-
-
-	// var answer = [];
-
-
-	for (var i = 0; i < 4; i++) {
-		if (secret[i] == guessOne[i] && answer[i] != "black") {
-			answer[i] = "black";
-			counter[guessOne[i]]--;
-		}
-	}
-	for (var i = 0; i < 4; i++) {
-		if ((secret.indexOf(guessOne[i]) != -1) && counter[guessOne[i]] > 0) {
-			answer[i] = "grey";
-
-
-
-
-		} else if (secret.indexOf(guessOne[i]) == -1) {
-			answer[i] = "white";
-
-		}
-
-
-
-
-		for (var i = 0; i < 4; i++) {
-
-			document.getElementById('C' + i).setAttribute("class", answer[i]);
-		}
-	}
-	var chances = 6;
-
-	function declareMissionStatus() {
-
-		for (var i = 0; i < 4; i++) {
-			if (answer[i] != "black") {
-				return document.getElementById("declareWinner").innerHTML = "TIME IS RUNNING OUT!! JUST " + (chances - 1) + " MORE CHANCES TO BREAK THE CODE!!";
-			}
-
-		} return document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! -- YOU BROKE THE CODE!! -- CONGRATULATIONS!!!";
-		document.getElementById("secretCodeDisplay").removeAttribute("class");
-		document.getElementById("siren").play();
-		wins++;
-	}
-
-	declareMissionStatus()
-}
-
-
-function makeGuess4() {
-
-	document.getElementById("makeGuess4").setAttribute('disabled', 'disabled');
-	document.getElementById("makeGuess4").style.color = "white";
-
-
-	console.log(counter);
-	var oneGuess = document.getElementById("21").getAttribute("class");
-	var twoGuess = document.getElementById("22").getAttribute("class");
-	var threeGuess = document.getElementById("23").getAttribute("class");
-	var fourGuess = document.getElementById("24").getAttribute("class");
-	var guessOne = [oneGuess, twoGuess, threeGuess, fourGuess]
-
-
-	// var answer = [];
-
-
-	for (var i = 0; i < 4; i++) {
-		if (secret[i] == guessOne[i] && answer[i] != "black") {
-			answer[i] = "black";
-			counter[guessOne[i]]--;
-		}
-	}
-	for (var i = 0; i < 4; i++) {
-		if ((secret.indexOf(guessOne[i]) != -1) && counter[guessOne[i]] > 0) {
-			answer[i] = "grey";
-
-
-
-
-		} else if (secret.indexOf(guessOne[i]) == -1) {
-			answer[i] = "white";
-
-		}
-
-
-
-
-		for (var i = 0; i < 4; i++) {
-
-			document.getElementById('D' + i).setAttribute("class", answer[i]);
-		}
-	}
-	var chances = 5;
-
-	function declareMissionStatus() {
-
-		for (var i = 0; i < 4; i++) {
-			if (answer[i] != "black") {
-				return document.getElementById("declareWinner").innerHTML = "TIME IS RUNNING OUT!! JUST " + (chances - 1) + " MORE CHANCES TO BREAK THE CODE!!";
-			}
-
-		} return document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! -- YOU BROKE THE CODE!! -- CONGRATULATIONS!!!";
-		document.getElementById("secretCodeDisplay").removeAttribute("class");
-		document.getElementById("song").stop();
-		document.getElementById("siren").play();
-		wins++;
-	}
-
-	declareMissionStatus()
-}
-
-function makeGuess5() {
-
-	document.getElementById("makeGuess5").setAttribute('disabled', 'disabled');
-	document.getElementById("makeGuess5").style.color = "white";
-
-
-	console.log(counter);
-	var oneGuess = document.getElementById("17").getAttribute("class");
-	var twoGuess = document.getElementById("18").getAttribute("class");
-	var threeGuess = document.getElementById("19").getAttribute("class");
-	var fourGuess = document.getElementById("20").getAttribute("class");
-	var guessOne = [oneGuess, twoGuess, threeGuess, fourGuess]
-
-
-	// var answer = [];
-
-
-	for (var i = 0; i < 4; i++) {
-		if (secret[i] == guessOne[i] && answer[i] != "black") {
-			answer[i] = "black";
-			counter[guessOne[i]]--;
-		}
-	}
-	for (var i = 0; i < 4; i++) {
-		if ((secret.indexOf(guessOne[i]) != -1) && counter[guessOne[i]] > 0) {
-			answer[i] = "grey";
-
-
-
-
-		} else if (secret.indexOf(guessOne[i]) == -1) {
-			answer[i] = "white";
-
-		}
-
-
-
-
-		for (var i = 0; i < 4; i++) {
-
-			document.getElementById('E' + i).setAttribute("class", answer[i]);
-		}
-	}
-	var chances = 4;
-
-	function declareMissionStatus() {
-
-		for (var i = 0; i < 4; i++) {
-			if (answer[i] != "black") {
-				return document.getElementById("declareWinner").innerHTML = "TIME IS RUNNING OUT!! JUST " + (chances - 1) + " MORE CHANCES TO BREAK THE CODE!!";
-			}
-
-		} return document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! -- YOU BROKE THE CODE!! -- CONGRATULATIONS!!!";
-		document.getElementById("secretCodeDisplay").removeAttribute("class");
-		document.getElementById("song").stop();
-		document.getElementById("siren").play();
-		wins++;
-	}
-
-	declareMissionStatus()
-}
-
-function makeGuess6() {
-
-	document.getElementById("makeGuess6").setAttribute('disabled', 'disabled');
-	document.getElementById("makeGuess6").style.color = "white";
-
-
-	console.log(counter);
-	var oneGuess = document.getElementById("13").getAttribute("class");
-	var twoGuess = document.getElementById("14").getAttribute("class");
-	var threeGuess = document.getElementById("15").getAttribute("class");
-	var fourGuess = document.getElementById("16").getAttribute("class");
-	var guessOne = [oneGuess, twoGuess, threeGuess, fourGuess]
-
-
-	// var answer = [];
-
-
-	for (var i = 0; i < 4; i++) {
-		if (secret[i] == guessOne[i] && answer[i] != "black") {
-			answer[i] = "black";
-			counter[guessOne[i]]--;
-		}
-	}
-	for (var i = 0; i < 4; i++) {
-		if ((secret.indexOf(guessOne[i]) != -1) && counter[guessOne[i]] > 0) {
-			answer[i] = "grey";
-
-
-
-
-		} else if (secret.indexOf(guessOne[i]) == -1) {
-			answer[i] = "white";
-
-		}
-
-
-
-
-		for (var i = 0; i < 4; i++) {
-
-			document.getElementById('F' + i).setAttribute("class", answer[i]);
-		}
-	}
-	var chances = 3;
-
-	function declareMissionStatus() {
-
-		for (var i = 0; i < 4; i++) {
-			if (answer[i] != "black") {
-				return document.getElementById("declareWinner").innerHTML = "TIME IS RUNNING OUT!! JUST " + (chances - 1) + " MORE CHANCES TO BREAK THE CODE!!";
-			}
-
-		} return document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! -- YOU BROKE THE CODE!! -- CONGRATULATIONS!!!";
-		document.getElementById("secretCodeDisplay").removeAttribute("class");
-		document.getElementById("song").stop();
-		document.getElementById("siren").play();
-		wins++;
-	}
-
-	declareMissionStatus()
-}
-
-function makeGuess7() {
-
-	document.getElementById("makeGuess7").setAttribute('disabled', 'disabled');
-	document.getElementById("makeGuess7").style.color = "white";
-
-
-	console.log(counter);
-	var oneGuess = document.getElementById("9").getAttribute("class");
-	var twoGuess = document.getElementById("10").getAttribute("class");
-	var threeGuess = document.getElementById("11").getAttribute("class");
-	var fourGuess = document.getElementById("12").getAttribute("class");
-	var guessOne = [oneGuess, twoGuess, threeGuess, fourGuess]
-
-
-	// var answer = [];
-
-
-	for (var i = 0; i < 4; i++) {
-		if (secret[i] == guessOne[i] && answer[i] != "black") {
-			answer[i] = "black";
-			counter[guessOne[i]]--;
-		}
-	}
-	for (var i = 0; i < 4; i++) {
-		if ((secret.indexOf(guessOne[i]) != -1) && counter[guessOne[i]] > 0) {
-			answer[i] = "grey";
-
-
-
-
-		} else if (secret.indexOf(guessOne[i]) == -1) {
-			answer[i] = "white";
-
-		}
-
-
-
-
-		for (var i = 0; i < 4; i++) {
-
-			document.getElementById('G' + i).setAttribute("class", answer[i]);
-		}
-	}
-	var chances = 2;
-
-	function declareMissionStatus() {
-
-		for (var i = 0; i < 4; i++) {
-			if (answer[i] != "black") {
-				return document.getElementById("declareWinner").innerHTML = "TIME IS RUNNING OUT!! JUST " + (chances - 1) + " MORE CHANCES TO BREAK THE CODE!!";
-			}
-
-		} return document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! -- YOU BROKE THE CODE!! -- CONGRATULATIONS!!!";
-		document.getElementById("secretCodeDisplay").removeAttribute("class");
-		document.getElementById("song").stop();
-		document.getElementById("siren").play();
-		wins++;
-	}
-
-	declareMissionStatus()
-}
-
-function makeGuess8() {
-	document.getElementById("secretCodeDisplay").removeAttribute("class");
-	document.getElementById("makeGuess8").setAttribute('disabled', 'disabled');
-	document.getElementById("makeGuess8").style.color = "white";
-
-
-	console.log(counter);
-	var oneGuess = document.getElementById("5").getAttribute("class");
-	var twoGuess = document.getElementById("6").getAttribute("class");
-	var threeGuess = document.getElementById("7").getAttribute("class");
-	var fourGuess = document.getElementById("8").getAttribute("class");
-	var guessOne = [oneGuess, twoGuess, threeGuess, fourGuess]
-
-
-	// var answer = [];
-
-
-	for (var i = 0; i < 4; i++) {
-		if (secret[i] == guessOne[i] && answer[i] != "black") {
-			answer[i] = "black";
-			counter[guessOne[i]]--;
-		}
-	}
-	for (var i = 0; i < 4; i++) {
-		if ((secret.indexOf(guessOne[i]) != -1) && counter[guessOne[i]] > 0) {
-			answer[i] = "grey";
-
-
-
-
-		} else if (secret.indexOf(guessOne[i]) == -1) {
-			answer[i] = "white";
-
-		}
-
-
-
-
-		for (var i = 0; i < 4; i++) {
-
-			document.getElementById('H' + i).setAttribute("class", answer[i]);
-		}
-	}
-	var chances = 1;
-
-	function declareMissionStatus() {
-
-		for (var i = 0; i < 4; i++) {
-			if (answer[i] != "black") {
-				return document.getElementById("declareWinner").innerHTML = "OH NO, YOU GOT LOCKED OUT!! GAME OVER!!";
-				// document.getElementById("secretCodeDisplay").removeAttribute("class");
-			}
-
-		} return document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! -- YOU BROKE THE CODE!! -- CONGRATULATIONS!!!";
+		} document.getElementById("song").pause();
+		  document.getElementById("siren").play();
+		
+		return document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! -- YOU BROKE THE CODE!! -- CONGRATULATIONS!!!";
+		
 		// document.getElementById("secretCodeDisplay").removeAttribute("class");
-		document.getElementById("song").stop();
-		document.getElementById("siren").play();
-		wins++;
+	
 	}
 
 	declareMissionStatus()
 }
+
 
