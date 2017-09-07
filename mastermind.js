@@ -83,22 +83,33 @@ var secretTwo = document.getElementById("2").getAttribute("class");
 var secretThree = document.getElementById("3").getAttribute("class");
 var secretFour = document.getElementById("4").getAttribute("class");
 var secret = [secretOne, secretTwo, secretThree, secretFour];
-var chances = 8;
+
 
 
 
 var number = 36;
 
+var chances = 7;
+var seconds = 300;
+
+	function time() {
+
+		seconds--;
 
 
-function makeGuess(level) {
+		document.getElementById("clock").innerHTML = seconds;
+	}
 
-	if (level=='H'){
+	setInterval(time, 1000);
+
+	function makeGuess(level) {
+
+	if (level == 'H') {
 		document.getElementById("secretCodeDisplay").removeAttribute("class");
 	}
 
 	document.getElementById("song").play();
-	
+
 
 	var counter = {
 		green: 0,
@@ -128,7 +139,7 @@ function makeGuess(level) {
 		guessOne.push(guess);
 		number--
 		count++
-		
+
 	}
 
 	console.log(guessOne);
@@ -166,29 +177,36 @@ function makeGuess(level) {
 	}
 
 
-	var chances = 8;
-    
+
+
 	// if (chances == 0){
 	// 	document.getElementById("secretCodeDisplay").removeAttribute("class");
 	// }
 
+
 	function declareMissionStatus() {
-
+		var correctCount = 0
 		for (var i = 0; i < 4; i++) {
-			if (answer[i] != "black") {
-				return document.getElementById("declareWinner").innerHTML = "TIME IS RUNNING OUT!! JUST " + (chances - 1) + " MORE CHANCES TO BREAK THE CODE!!";
+			if (answer[i] == "black") {
+                correctCount++;
 			}
-
-		} document.getElementById("song").pause();
-		  document.getElementById("siren").play();
-		
-		return document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! -- YOU BROKE THE CODE!! -- CONGRATULATIONS!!!";
-		
+			
+		} if (correctCount ==4){ 
+			document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! -- YOU BROKE THE CODE!! -- CONGRATULATIONS!!!";
+		document.getElementById("song").pause();
+		document.getElementById("siren").play();
+		} else {
+		document.getElementById("declareWinner").innerHTML = "TIME IS RUNNING OUT!! JUST " + chances + " MORE CHANCES TO BREAK THE CODE!!";
+		chances--;
+	}
+	
 		// document.getElementById("secretCodeDisplay").removeAttribute("class");
 	
 	}
-
 	declareMissionStatus()
 }
+
+
+
 
 

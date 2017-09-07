@@ -21,7 +21,11 @@
             text-align: center;
             font-size: 100px;
         }
-
+        
+        h2 {
+            text-align:center;
+            font-size:35px;
+        }
         table {
             border-style: outset;
             border-collapse: collapse;
@@ -53,7 +57,7 @@
         #gameBoard {
 
             margin-left: 37.15vw;
-            margin-top: 5vh;
+            margin-top: 4vh;
         }
 
         .X {
@@ -128,7 +132,7 @@
             color: navy;
         }
 
-        .redhighlight {
+        .red-highlight {
             color: red;
         }
 
@@ -193,11 +197,15 @@
             display:none;
         } */
     </style>
+	
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">	
+
 </head>
 
 <body>
-    <h1>Mastermind</h1>
-
+    <h1 class="animated bounceInDown">Mastermind</h1>
+    <h2 class= "red-highlight" id="clock">CLOCK</h2>
     <div id="declareWinner">1296 POSSIBILITIES - CAN YOU BREAK THE CODE?</div>
     <div id="gameBoard">
         <table>
