@@ -90,7 +90,7 @@ var secret = [secretOne, secretTwo, secretThree, secretFour];
 var number = 36;
 
 var chances = 7;
-var seconds = 10;
+var seconds = 300;
 
 function time() {
 
@@ -217,6 +217,8 @@ function makeGuess(level) {
 		} else if (chances == 0){
 			document.getElementById("declareWinner").innerHTML = "OH NO!! YOU RAN OUT OF CHANCES!!";
 			document.getElementById("bg").className="animated flash";
+			clearInterval(clock);
+
 		}
 		// document.getElementById("secretCodeDisplay").removeAttribute("class");
 
