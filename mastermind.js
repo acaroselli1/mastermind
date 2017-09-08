@@ -174,6 +174,7 @@ var seconds = 300;
 	for (var i = 0; i < 4; i++) {
 
 		document.getElementById(level + i).setAttribute("class", answer[i]);
+
 	}
 
 
