@@ -101,6 +101,7 @@ function time() {
 
 	if (seconds == 0){
 		document.getElementById("declareWinner").innerHTML = "OH NO!! YOU RAN OUT OF TIME!!";
+		document.getElementById("bg").className="animated flash";
 		clearInterval(clock);
 	}
 
@@ -108,7 +109,7 @@ function time() {
 
 }
 
-setTimeout(time, 5000)
+ setTimeout(clock, 10000)
 
 var clock = setInterval(time, 1000);
 
@@ -215,6 +216,7 @@ function makeGuess(level) {
 			chances--;
 		} else if (chances == 0){
 			document.getElementById("declareWinner").innerHTML = "OH NO!! YOU RAN OUT OF CHANCES!!";
+			document.getElementById("bg").className="animated flash";
 		}
 		// document.getElementById("secretCodeDisplay").removeAttribute("class");
 
