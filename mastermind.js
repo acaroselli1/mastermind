@@ -211,6 +211,8 @@ function makeGuess(level) {
 			document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! -- YOU BROKE THE CODE!! -- CONGRATULATIONS!!!";
 			document.getElementById("song").pause();
 			document.getElementById("siren").play();
+			clearInterval(clock);
+			
 		} else if (chances != 0) {
 			document.getElementById("declareWinner").innerHTML = "TIME IS RUNNING OUT!! JUST " + chances + " MORE CHANCE(S) TO BREAK THE CODE!!";
 			chances--;
