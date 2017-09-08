@@ -90,19 +90,31 @@ var secret = [secretOne, secretTwo, secretThree, secretFour];
 var number = 36;
 
 var chances = 7;
-var seconds = 300;
+var seconds = 10;
 
-	function time() {
+function time() {
 
-		seconds--;
+	seconds--;
 
 
-		document.getElementById("clock").innerHTML = seconds;
+	document.getElementById("clock").innerHTML = seconds;
+
+	if (seconds == 0){
+		document.getElementById("declareWinner").innerHTML = "OH NO!! YOU RAN OUT OF TIME!!";
+		clearInterval(clock);
 	}
 
-	setInterval(time, 1000);
 
-	function makeGuess(level) {
+
+}
+
+setTimeout(time, 5000)
+
+var clock = setInterval(time, 1000);
+
+
+
+function makeGuess(level) {
 
 	if (level == 'H') {
 		document.getElementById("secretCodeDisplay").removeAttribute("class");
@@ -187,22 +199,25 @@ var seconds = 300;
 
 	function declareMissionStatus() {
 		var correctCount = 0
+				
+	
 		for (var i = 0; i < 4; i++) {
 			if (answer[i] == "black") {
-                correctCount++;
+				correctCount++;
 			}
-			
-		} if (correctCount ==4){ 
+
+		} if (correctCount == 4) {
 			document.getElementById("declareWinner").innerHTML = "MISSION ACCOMPLISHED!! -- YOU BROKE THE CODE!! -- CONGRATULATIONS!!!";
-		document.getElementById("song").pause();
-		document.getElementById("siren").play();
-		} else {
-		document.getElementById("declareWinner").innerHTML = "TIME IS RUNNING OUT!! JUST " + chances + " MORE CHANCES TO BREAK THE CODE!!";
-		chances--;
-	}
-	
+			document.getElementById("song").pause();
+			document.getElementById("siren").play();
+		} else if (chances != 0) {
+			document.getElementById("declareWinner").innerHTML = "TIME IS RUNNING OUT!! JUST " + chances + " MORE CHANCE(S) TO BREAK THE CODE!!";
+			chances--;
+		} else if (chances == 0){
+			document.getElementById("declareWinner").innerHTML = "OH NO!! YOU RAN OUT OF CHANCES!!";
+		}
 		// document.getElementById("secretCodeDisplay").removeAttribute("class");
-	
+
 	}
 	declareMissionStatus()
 }
